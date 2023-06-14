@@ -9,7 +9,7 @@ require('./db/connection')
 const router = require('./routes/router')
 
 
-app.use(cors({ origin: 'http://localhost:4200' }));
+app.use(cors());
 // Setup middleware
 app.use(bodyParser.json());
 app.use(router)
