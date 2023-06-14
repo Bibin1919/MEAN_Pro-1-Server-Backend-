@@ -4,9 +4,9 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 3000;
-require('dotenv').config()
-require('./db/connection')
-const router = require('./routes/router')
+require('dotenv').config();
+require('./db/connection');
+const router = require('./routes/router');
 
 
 app.use(cors());
@@ -156,6 +156,7 @@ app.post('/admin/add-product', async (req, res) => {
     await product.save();
 
     res.status(201).send('Product added successfully');
+
   } catch (err) {
     console.error('Error adding Item:', err);
     res.status(500).send('Error adding Iqwtem');
@@ -203,8 +204,12 @@ app.delete('/admin/delete-shop/:id', async (req, res) => {
   }
 });
 
+app.get('/', (req, res) => {
+  const response = 'Hello, world!'; // Replace with your desired response
 
-
+  // Send the response to the browser
+  res.send(response);
+});
 
 // Start the server
 app.listen(port, () => {
