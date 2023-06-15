@@ -12,7 +12,7 @@ const router = require('./routes/router');
 app.use(cors());
 // Setup middleware
 app.use(bodyParser.json());
-app.use(router)
+app.use(router);
 
 // Connect to MongoDB Atlas database
 mongoose.connect('mongodb+srv://bibinbinoy1919:bibin@cluster0.7o4brlu.mongodb.net/textile?retryWrites=true&w=majority', {
